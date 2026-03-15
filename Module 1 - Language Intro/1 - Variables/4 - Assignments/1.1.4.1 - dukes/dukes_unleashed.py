@@ -12,8 +12,12 @@ Note: this problem does not require the "compounding interest" formula from the 
 
 """
 
-### Your code here ###
+#Ryan Beach
+#06/12/2024
+#Assuming the problem is asking for the amount of money needed to generate the annual costs through a 5% return
 
-in_state_gift = 0
+in_state_gift = 30792 / 0.05
 
-out_state_gift = 0
+out_state_gift = 47882 / 0.05
+print("In-state gift needed: $", in_state_gift)
+print("Out-of-state gift needed: $", out_state_gift)

@@ -10,9 +10,25 @@ def my_pi(target_error):
     """
 
     ### YOUR CODE HERE ###
+    a = 1  
+    b = 1 / math.sqrt(2)
+    t = 0.25
+    p = 1
+    while True:
+        a_next = (a + b) / 2
+        b_next = math.sqrt(a * b)
+        t_next = t - p * (a - a_next) ** 2
+        p_next = 2 * p
+
+        pi_approximation = (a_next + b_next) ** 2 / (4 * t_next)
+
+        if abs(math.pi - pi_approximation) < target_error:
+            return pi_approximation
+
+        a, b, t, p = a_next, b_next, t_next, p_next
 
     # change this so an actual value is returned
-    return 0
+    return pi_approximation
 
 
 
