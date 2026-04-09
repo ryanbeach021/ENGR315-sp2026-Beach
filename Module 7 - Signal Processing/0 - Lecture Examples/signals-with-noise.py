@@ -43,7 +43,7 @@ source_signal = source_amplitude * np.sin(2 * math.pi * source_signal_frequency 
 noise_signal = noise_amplitude * np.sin(2 * math.pi * noise_signal_frequency * time)
 
 # plot the resulting signal in matplotlib
-plt.title('Base Signal with noiseing Frequency')
+plt.title('Base Signal with Noise')
 plt.xlabel('Time (s)')
 plt.ylabel('Signal')
 plt.plot(time, source_signal, label='Source Signal')
