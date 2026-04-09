@@ -34,7 +34,17 @@ def one_sided_tests(_files: list, _mean: float, _alpha: float, _less_than: bool)
     # list of files that are out of spec
     reject_null_hypothesis = []
 
-    # YOUR CODE HERE #
+    for file in _files:
+        sample = np.loadtxt(file)
+        t_stat, p_two_sided = ttest_1samp(sample, _mean)
+
+        if _less_than:
+            p_value = p_two_sided / 2 if t_stat < 0 else 1 - p_two_sided / 2
+        else:
+            p_value = p_two_sided / 2 if t_stat > 0 else 1 - p_two_sided / 2
+
+        if p_value < _alpha:
+            reject_null_hypothesis.append(file)
 
     # return samples that were rejected
     return reject_null_hypothesis
